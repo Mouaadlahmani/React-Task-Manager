@@ -123,11 +123,11 @@ function Tasks(){
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Task</label>
                     <input type="text" className="form-control" value={newTitle} onChange={(e)=>setNewTitle(e.target.value)} id="exampleInputEmail1"
-                           placeholder="Task"/>
+                           placeholder="Task" required/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputPassword1">Description</label>
-                    <input type="text" className="form-control" value={newDescription} onChange={(e)=>setNewDescription(e.target.value)} id="exampleInputPassword1" placeholder="Description"/>
+                    <input type="text" className="form-control" value={newDescription} onChange={(e)=>setNewDescription(e.target.value)} id="exampleInputPassword1" placeholder="Description" required/>
                 </div>
                 <button onClick={handleAdd} type="submit" className="btn btn-primary">Submit</button>
             </form>
