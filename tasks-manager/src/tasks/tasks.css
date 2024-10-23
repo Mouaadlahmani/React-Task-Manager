@@ -131,6 +131,11 @@ input[type="text"]:focus {
     align-items: center;
     gap: 10px;
 }
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
 
 .task-list-item .icon {
     font-size: 20px;

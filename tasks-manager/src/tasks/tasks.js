@@ -11,9 +11,14 @@ function Tasks(){
     const [pendingTaskes, setPendingTaskes] = useState([]);
     const [newTitle, setNewTitle] = useState("");
     const [newDescription, setNewDescription] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
 
     const handleAdd = () =>{
+        if (newTitle.trim() === "" || newDescription.trim() === "") {
+            setErrorMessage("Both title and description are required.");
+            return;
+        }
         let newTask = {
             title:newTitle,
             description:newDescription
@@ -129,6 +134,7 @@ function Tasks(){
                     <label htmlFor="exampleInputPassword1">Description</label>
                     <input type="text" className="form-control" value={newDescription} onChange={(e)=>setNewDescription(e.target.value)} id="exampleInputPassword1" placeholder="Description" required/>
                 </div>
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
                 <button onClick={handleAdd} type="submit" className="btn btn-primary">Submit</button>
             </form>
 
